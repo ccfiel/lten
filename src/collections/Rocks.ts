@@ -4,11 +4,19 @@ import {
   UploadFeature,
   lexicalEditor
 } from '@payloadcms/richtext-lexical'
+import { isCreatedBy } from '../access/isCreatedBy'
+import { isAdmin } from '../access/isAdmin'
+
 
 const Rocks: CollectionConfig = {
   slug: 'rocks',
   admin: {
     useAsTitle: 'name',
+  },
+  access: {
+    create: isCreatedBy || isAdmin,
+    read: isCreatedBy || isAdmin,
+    update: isCreatedBy || isAdmin,
   },
   fields: [
     {

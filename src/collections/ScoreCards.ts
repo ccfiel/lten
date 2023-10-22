@@ -1,9 +1,16 @@
 import { CollectionConfig } from 'payload/types'
+import { isCreatedBy } from '../access/isCreatedBy'
+import { isAdmin } from '../access/isAdmin'
 
 const ScoreCards: CollectionConfig = {
   slug: 'scorecards',
   admin: {
     useAsTitle: 'name',
+  },
+  access: {
+    create: isCreatedBy || isAdmin,
+    read: isCreatedBy || isAdmin,
+    update: isCreatedBy || isAdmin,
   },
   fields: [
     {
