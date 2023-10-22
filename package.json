@@ -16,7 +16,8 @@
     "payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload"
   },
   "dependencies": {
-    "@boomworks/payload-plugin-author-fields": "^1.1.4",
+    "@boomworks/payload-plugin-author-fields": "^1.1.5",
+    "@ccfiel/payload-plugin-author-fields": "^1.1.5",
     "@payloadcms/bundler-webpack": "^1.0.4",
     "@payloadcms/db-mongodb": "^1.0.4",
     "@payloadcms/plugin-cloud": "^2.2.5",

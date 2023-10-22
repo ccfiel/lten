@@ -13,7 +13,7 @@ import Rocks from './collections/Rocks'
 import Headlines from './collections/Headlines'
 import Todos from './collections/Todos'
 import Issues from './collections/Issues'
-import { addAuthorFields } from '@boomworks/payload-plugin-author-fields'
+import { addAuthorFields } from '@ccfiel/payload-plugin-author-fields'
 
 export default buildConfig({
   admin: {
