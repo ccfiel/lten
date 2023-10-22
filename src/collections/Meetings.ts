@@ -1,5 +1,4 @@
 import { CollectionConfig } from 'payload/types'
-// import { populateCreatedUpdatedBy } from '../hooks/populatedCreatedUpdatedBy'
 import {
   LinkFeature,
   UploadFeature,
@@ -7,6 +6,10 @@ import {
 } from '@payloadcms/richtext-lexical'
 import { isAdmin } from '../access/isAdmin'
 import { isLeader } from '../access/isLeader'
+import { isLoggedIn } from '../access/isLoggedIn'
+import { isCreatedBy } from '../access/isCreatedBy'
+import { isOwner } from '../access/isOwner'
+import { isAttendees } from '../access/isAttendees'
 
 const Meetings: CollectionConfig = {
   slug: 'meetings',
@@ -15,11 +18,8 @@ const Meetings: CollectionConfig = {
   },
   access: {
     create: isAdmin || isLeader,
-    read: isAdmin || isLeader,
+    read: isAttendees
   },
-  // hooks: {
-  //   beforeChange: [populateCreatedUpdatedBy]
-  // },
   fields: [
     {
       name: 'name',
