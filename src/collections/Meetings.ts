@@ -19,7 +19,7 @@ const Meetings: CollectionConfig = {
   access: {
     create: isAdmin || isLeader,
     read: isAttendees,
-    update: isOwner || isAdmin,
+    update: isAdmin || isOwner,
   },
   fields: [
     {
