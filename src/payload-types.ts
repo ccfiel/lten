@@ -25,7 +25,7 @@ export interface User {
   id: string;
   name: string;
   profilePicture?: string | Media;
-  roles?: ('admin' | 'user')[];
+  roles?: ('admin' | 'leader' | 'user')[];
   updatedAt: string;
   createdAt: string;
   email: string;

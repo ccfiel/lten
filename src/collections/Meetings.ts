@@ -1,15 +1,25 @@
 import { CollectionConfig } from 'payload/types'
+// import { populateCreatedUpdatedBy } from '../hooks/populatedCreatedUpdatedBy'
 import {
   LinkFeature,
   UploadFeature,
   lexicalEditor
 } from '@payloadcms/richtext-lexical'
+import { isAdmin } from '../access/isAdmin'
+import { isLeader } from '../access/isLeader'
 
 const Meetings: CollectionConfig = {
   slug: 'meetings',
   admin: {
     useAsTitle: 'name',
   },
+  access: {
+    create: isAdmin || isLeader,
+    read: isAdmin || isLeader,
+  },
+  // hooks: {
+  //   beforeChange: [populateCreatedUpdatedBy]
+  // },
   fields: [
     {
       name: 'name',
