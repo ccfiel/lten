@@ -15,7 +15,7 @@ import Todos from './collections/Todos'
 import Issues from './collections/Issues'
 import { addAuthorFields } from '@ccfiel/payload-plugin-author-fields'
 import BeforeNavLinks from './components/BeforeNavLinks'
-import CustomDashboardView from './components/views/CustomDashboard'
+import AnalyticsView from './components/views/Analytics'
 import InputScoreCardView from './components/views/InputScoreCard'
 
 export default buildConfig({
@@ -26,12 +26,12 @@ export default buildConfig({
       beforeNavLinks: [BeforeNavLinks],
       views: {
         CustomMinimalView: {
-          Component: CustomDashboardView,
-          path: '/custom-dashboard',
+          Component: AnalyticsView,
+          path: '/analytics',
         },
         InputScoreCard: {
           Component: InputScoreCardView,
-          path: '/input-score-card',
+          path: '/update-score-card',
         },
       },
     },

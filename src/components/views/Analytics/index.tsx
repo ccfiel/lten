@@ -21,7 +21,7 @@ import './index.scss'
 
 const baseClass = 'custom-default-view'
 
-const CustomDefaultView: AdminViewComponent = ({ canAccessAdmin, user }) => {
+const AnalyticsView: AdminViewComponent = ({ canAccessAdmin, user }) => {
   const {
     routes: { admin: adminRoute },
   } = useConfig()
@@ -74,4 +74,4 @@ const CustomDefaultView: AdminViewComponent = ({ canAccessAdmin, user }) => {
   )
 }
 
-export default CustomDefaultView
+export default AnalyticsView

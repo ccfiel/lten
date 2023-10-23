@@ -26,7 +26,7 @@ const BeforeNavLinks: React.FC = () => {
         <NavLink
           activeClassName="active"
           style={{ textDecoration: 'none' }}
-          to={`${adminRoute}/custom-dashboard`}
+          to={`${adminRoute}/analytics`}
         >
           Analytics
         </NavLink>
@@ -35,9 +35,9 @@ const BeforeNavLinks: React.FC = () => {
         <NavLink
           activeClassName="active"
           style={{ textDecoration: 'none' }}
-          to={`${adminRoute}/input-score-card`}
+          to={`${adminRoute}/update-score-card`}
         >
-          Input Score Card
+          Update Score Card
         </NavLink>
       </h4>
       <div id="custom-css" />
