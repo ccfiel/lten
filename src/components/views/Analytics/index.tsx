@@ -5,7 +5,6 @@ import type { AdminViewComponent } from 'payload/dist/config/types'
 
 import Button from 'payload/dist/admin/components/elements/Button'
 import { useStepNav } from 'payload/dist/admin/components/elements/StepNav'
-// As this is the demo project, we import our dependencies from the `src` directory.
 import DefaultTemplate from 'payload/dist/admin/components/templates/Default'
 import { useConfig } from 'payload/dist/admin/components/utilities/Config'
 import Meta from 'payload/dist/admin/components/utilities/Meta'
@@ -34,7 +33,7 @@ const AnalyticsView: AdminViewComponent = ({ canAccessAdmin, user }) => {
   useEffect(() => {
     setStepNav([
       {
-        label: 'Custom Admin View with Default Template',
+        label: 'My Analytics',
       },
     ])
   }, [setStepNav])
@@ -59,7 +58,7 @@ const AnalyticsView: AdminViewComponent = ({ canAccessAdmin, user }) => {
           paddingRight: 'var(--gutter-h)',
         }}
       >
-        <h1>Custom Admin View</h1>
+        <h1>My Analytics</h1>
         <p>
           Here is a custom admin view that was added in the Payload config. It uses the Default
           Template, so the sidebar is rendered.
