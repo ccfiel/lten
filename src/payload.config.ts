@@ -16,7 +16,7 @@ import Issues from './collections/Issues'
 import { addAuthorFields } from '@ccfiel/payload-plugin-author-fields'
 import BeforeNavLinks from './components/BeforeNavLinks'
 import AnalyticsView from './components/views/Analytics'
-import InputScoreCardView from './components/views/InputScoreCard'
+import UpdateScoreCardView from './components/views/UpdateScoreCard'
 
 export default buildConfig({
   admin: {
@@ -30,7 +30,7 @@ export default buildConfig({
           path: '/analytics',
         },
         InputScoreCard: {
-          Component: InputScoreCardView,
+          Component: UpdateScoreCardView,
           path: '/update-score-card',
         },
       },
