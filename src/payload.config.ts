@@ -14,11 +14,27 @@ import Headlines from './collections/Headlines'
 import Todos from './collections/Todos'
 import Issues from './collections/Issues'
 import { addAuthorFields } from '@ccfiel/payload-plugin-author-fields'
+import BeforeNavLinks from './components/BeforeNavLinks'
+import CustomDashboardView from './components/views/CustomDashboard'
+import InputScoreCardView from './components/views/InputScoreCard'
 
 export default buildConfig({
   admin: {
     user: Users.slug,
     bundler: webpackBundler(),
+    components: {
+      beforeNavLinks: [BeforeNavLinks],
+      views: {
+        CustomMinimalView: {
+          Component: CustomDashboardView,
+          path: '/custom-dashboard',
+        },
+        InputScoreCard: {
+          Component: InputScoreCardView,
+          path: '/input-score-card',
+        },
+      },
+    },
   },
   editor: lexicalEditor({}),
   collections: [Users, Meetings, ScoreCards, Rocks, Headlines, Todos, Issues,  {
