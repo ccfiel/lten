@@ -1,10 +1,10 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import Button from 'payload/dist/admin/components/elements/Button'
 
 import { useStepNav } from 'payload/dist/admin/components/elements/StepNav'
 import { type AdminViewComponent } from 'payload/dist/config/types'
 import { useConfig } from 'payload/dist/admin/components/utilities/Config'
-
+import { Scorecard } from 'payload/generated-types'
 import {
   createColumnHelper,
   flexRender,
@@ -12,6 +12,7 @@ import {
   useReactTable,
   ColumnDef,
 } from '@tanstack/react-table'
+import payload from 'payload'
 
 type Person = {
   firstName: string
@@ -21,6 +22,7 @@ type Person = {
   status: string
   progress: number
 }
+
 
 const defaultData: Person[] = [
   {
@@ -140,6 +142,12 @@ function useSkipper() {
   return [shouldSkip, skip] as const
 }
 
+  // const scorecard = payload.find('scorecards', {
+  //   limit: 1,
+  //   sort: {
+  //     createdAt: -1,
+  //   },
+  // })
   const [data, setData] = React.useState(() => [...defaultData])
   const rerender = React.useReducer(() => ({}), {})[1]
   const [autoResetPageIndex, skipAutoResetPageIndex] = useSkipper()
@@ -169,8 +177,29 @@ function useSkipper() {
     getCoreRowModel: getCoreRowModel(),
   })
 
+
+  const [advice, setAdvice] = useState("");
+
+  useEffect(() => {
+    const url = "https://api.adviceslip.com/advice";
+
+    const fetchData = async () => {
+        try {
+            const response = await fetch(url);
+            const json = await response.json();
+            console.log(json.slip.advice);
+            setAdvice(json.slip.advice);
+        } catch (error) {
+            console.log("error", error);
+        }
+    };
+
+    fetchData();
+}, []);
+
   return (
     <Fragment>
+      <h1>{advice}</h1>
       <div
         style={{
           marginTop: 'calc(var(--base) * 2)',
