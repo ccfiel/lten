@@ -1,6 +1,7 @@
 import { CollectionConfig } from 'payload/types'
 import { isCreatedBy } from '../access/isCreatedBy'
 import { isAdmin } from '../access/isAdmin'
+import { isLoggedIn } from '../access/isLoggedIn'
 
 const ScoreCards: CollectionConfig = {
   slug: 'scorecards',

@@ -5,7 +5,7 @@ export const isCreatedBy: Access = ({ req: { user } }) => {
   if (user) {
     // If any other type of user, only provide access to themselves
     return {
-      createdBy: {
+      'createdBy.value': {
         equals: user.id,
       }
     }
